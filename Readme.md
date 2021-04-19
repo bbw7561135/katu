@@ -37,7 +37,7 @@ Katu is mainly intended to be used as a library, but the examples can be used
 right away to produce results. In other cases, you can use them as simple
 templates from where to write your own programs.
 
-Katu produces a lot of look-up tables (LUTs) and that provide optimization
+Katu produces a lot of look-up tables (LUTs) that provide optimization
 where possible. So, the first step to launch any of the examples, or any 
 program that relies on Katu is to create the Bethe-Heitler LUT. For that, 
 you can use the program that should have been compiled in the `tables` folder.
