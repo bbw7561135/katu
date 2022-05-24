@@ -156,7 +156,7 @@ static double f_function_direct_one_pion(double y, double e_min, double e_max)
     if(y < e_min)
         return 0;
 
-    double aux = pow(EPSILON_TO_GEV(y), -2);
+    double aux = pow(EPSILON_TO_GEV(y), -2) / 2;
     double aux1 = I_one_pion(y);
     double aux2 = I_one_pion(e_min);
     double aux3 = I_one_pion(e_max);
@@ -172,7 +172,7 @@ static double f_function_direct_two_pions(double y, double e_min, double e_max)
     if(y < e_min)
         return 0;
 
-    double aux = pow(EPSILON_TO_GEV(y), -2);
+    double aux = pow(EPSILON_TO_GEV(y), -2) / 2;
     double aux1 = I_two_pions(y);
     double aux2 = I_two_pions(e_min);
     double aux3 = I_two_pions(e_max);
@@ -210,6 +210,8 @@ void multi_resonance_pion_production(state_t *st)
     memset(st->multi_resonances_negative_pion_gains, '\0', st->negative_pions.size * sizeof(double));
 
     for(process = 0; process < 18; process++)
+    /* for(process =  0; process < 14; process++) // Multi-pion */
+    /* for(process = 14; process < 18; process++) // Resonant */
     {
         unsigned int index_base1 = process * st->neutral_pions.size;
 
